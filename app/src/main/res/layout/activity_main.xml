@@ -8,7 +8,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:layout_marginTop="40dp"
-        tools:context=".MainActivity">
+        tools:context=".LoginActivity">
 
     <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -37,6 +37,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
+            android:layout_marginTop="16dp"
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

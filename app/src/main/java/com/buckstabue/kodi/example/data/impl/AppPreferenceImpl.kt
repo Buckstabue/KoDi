@@ -4,4 +4,6 @@ import com.buckstabue.kodi.example.data.AppPreference
 
 class AppPreferenceImpl : AppPreference {
     override val serverUrl: String = "http://scrumpoker.ru"
+
+    override var currentUserId: Long? = null
 }
