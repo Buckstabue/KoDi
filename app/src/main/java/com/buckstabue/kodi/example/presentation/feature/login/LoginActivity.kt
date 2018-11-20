@@ -7,7 +7,7 @@ import com.buckstabue.kodi.example.R
 import com.buckstabue.kodi.example.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : BaseActivity<LoginView, LoginPresenter>() {
+class LoginActivity : BaseActivity<LoginView, LoginPresenter>(), LoginView {
     companion object {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, LoginActivity::class.java)
@@ -19,6 +19,7 @@ class LoginActivity : BaseActivity<LoginView, LoginPresenter>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         val screenComponent = createLoginComponent()
         presenter = screenComponent.get()
         loginButton.setOnClickListener {

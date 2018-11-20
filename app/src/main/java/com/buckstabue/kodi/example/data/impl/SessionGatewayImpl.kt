@@ -1,5 +1,6 @@
 package com.buckstabue.kodi.example.data.impl
 
+import com.buckstabue.kodi.example.AppInjector
 import com.buckstabue.kodi.example.data.AppPreference
 import com.buckstabue.kodi.example.data.SessionGateway
 
@@ -12,5 +13,6 @@ class SessionGatewayImpl(
 
     override fun logout() {
         appPreference.currentUserId = null
+        AppInjector.dropUserComponent()
     }
 }

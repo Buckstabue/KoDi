@@ -6,7 +6,7 @@ abstract class BasePresenter<VIEW : BaseView>(
     protected val context: Context
 ) {
     protected var view: VIEW? = null
-    private var isFirstViewAttach = false
+    private var isFirstViewAttach = true
 
     fun attachView(view: VIEW) {
         this.view = view

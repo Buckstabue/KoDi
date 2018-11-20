@@ -3,9 +3,9 @@ package com.buckstabue.kodi.example.presentation.feature.profile
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.buckstabue.kodi.example.AppInjector
 import com.buckstabue.kodi.example.R
 import com.buckstabue.kodi.example.presentation.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : BaseActivity<ProfileView, ProfilePresenter>(), ProfileView {
     companion object {
@@ -19,10 +19,15 @@ class ProfileActivity : BaseActivity<ProfileView, ProfilePresenter>(), ProfileVi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        presenter = AppInjector.getUserComponent().get()
+
+        val screenComponent = createProfileComponent()
+        presenter = screenComponent.get()
+        logoutButton.setOnClickListener {
+            presenter.onLogoutClick()
+        }
     }
 
     override fun showUserName(userName: String) {
-
+        welcomeText.text = "Welcome $userName. How do you do?"
     }
 }
