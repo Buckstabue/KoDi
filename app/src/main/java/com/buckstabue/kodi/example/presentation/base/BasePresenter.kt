@@ -17,7 +17,7 @@ abstract class BasePresenter<VIEW : BaseView>(
         isFirstViewAttach = false
     }
 
-    protected fun onFirstViewAttach() {
+    protected open fun onFirstViewAttach() {
     }
 
     protected fun onViewAttach(isFirstViewAttach: Boolean) {

@@ -1,7 +1,7 @@
 package com.buckstabue.kodi.example.data
 
 interface AppPreference {
-    var currentUserId: Long?
+    var currentUserId: String?
 
     val serverUrl: String
 }

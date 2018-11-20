@@ -7,6 +7,6 @@ import com.buckstabue.kodi.example.data.impl.SessionGatewayImpl
 
 fun createAnonymousUserComponent(appComponent: Component): Component {
     return component(parent = appComponent) {
-        single<SessionGateway> { SessionGatewayImpl() }
+        single<SessionGateway> { SessionGatewayImpl(get()) }
     }
 }
